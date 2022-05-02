@@ -14,7 +14,6 @@ import models.User;
 
 @Component
 public class UserDAO {
-	// Спрятать
 	private static final String URL = "jdbc:postgresql://localhost:5432/onlinestore";
 	private static final String USERNAME = "andrewsha";
 	private static final String PASSWORD = "07112000";

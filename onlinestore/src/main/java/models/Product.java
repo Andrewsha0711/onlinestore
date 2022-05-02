@@ -1,27 +1,45 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Product {
 	private String id;
-	// Название товара
 	private String name;
-	// Краткое описание на странице с остальными товарами
 	private String shortDescription;
-	// Цена (основная)
 	private Double actualPrice;
-	// Скидка
 	private Double discount;
-	// Цена с учетом скидки
 	private Double price;
-	// Путь к изображению
-	private String imagePath;
 	
+//	private String category;
+	private String description;
+
+	private String storeId;
+	private String[] imagesURL;
 	
+	public Double getPrice() {
+		if(this.discount != null && this.discount >= 0) {
+			return this.actualPrice - this.actualPrice * (this.discount/100);
+		}
+		else {
+			return this.actualPrice;
+		}
+	}
+	public void setPrice(Double price) {
+		this.discount = (this.actualPrice - price) / this.actualPrice * 100;
+	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
+//	public String getCategory() {
+//		return category;
+//	}
+//	public void setCategory(String category) {
+//		this.category = category;
+//	}
 	public String getName() {
 		return name;
 	}
@@ -46,16 +64,22 @@ public class Product {
 	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
-	/**
-	 * @return the currentPrice
-	 */
-	public Double getPrice() {
-		return this.actualPrice - this.actualPrice * (this.discount/100);
+	public String getStoreId() {
+		return storeId;
 	}
-	public String getImagePath() {
-		return imagePath;
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
 	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}	
+	public Object[] getImagesURL() {
+		return imagesURL;
+	}
+	public void setImagesURL(String[] imagesURL) {
+		this.imagesURL = imagesURL;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

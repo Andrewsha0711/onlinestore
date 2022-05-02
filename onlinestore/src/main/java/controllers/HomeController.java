@@ -2,24 +2,32 @@ package controllers;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import dao.ProductCategoryDAO;
 import dao.ProductDAO;
 import models.Product;
-import models.ProductCategory;
 
 @Controller
 public class HomeController {
-
+	
 	@GetMapping("/")
 	public String homePage(Model model){
-		ArrayList<Product> products = new ProductDAO().getProducts(1, 20);
-		ArrayList<ProductCategory> categories = new ProductCategoryDAO().getProductCategories();
-		model.addAttribute("products", products);
-		model.addAttribute("categories", categories);
+		//model.addAttribute("categories", categories);
 		return "home_page";
+	}
+	
+	@GetMapping("/catalog")
+	public String productsByCategoryPage(Model model){
+		ArrayList<Product> products = new ProductDAO().getProducts(1, 20);
+//		String baseURL = ServletUriComponentsBuilder
+//				.fromCurrentContextPath().build().toUriString();
+//		model.addAttribute("baseURL", baseURL);
+		model.addAttribute("products", products);
+		return "category_catalog";
 	}
 }

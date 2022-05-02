@@ -10,7 +10,7 @@ function createProductCards(products){
     const content = `
     <div class="product-card">
       <div class="product-image">
-        <img src=${product.imagePath} class="product-thumb" alt="">
+        <img src=${product.images[0]} class="product-thumb" alt="">
         <button class="card-btn" type="button" name="button">add to wishlist</button>
       </div>
       <div class="product-info">
@@ -39,7 +39,7 @@ function createProductCategories(categories){
 
     // Construct card content
     const content = `
-    <li class="nav-item"><img src=""><a href="#">Category</a></li>
+    <li class="nav-item"><img src=""><a href="#">${result.name}</a></li>
     `;
 
     // Append newyly created card element to the container
