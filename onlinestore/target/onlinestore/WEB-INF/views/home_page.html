@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Online store</title>
+<link rel="stylesheet" href="resources/css/home_page.css">
+</head>
+
+<body>
+	<nav class="nav-bar">
+		<div class="nav">
+			<div class="pop-up-categories-menu">
+				<button class="categories" onclick="categoriesMenuToggle();">
+					<img src="resources/img/cox.jpg">
+				</button>
+				<div class="menu">
+					<h3>Categories</h3>
+					<ul>
+						<li class="nav-item"><img src=""><a href="#">Category</a></li>
+						<script src="resources/js/home_page.js"></script>
+						<script>
+							createProductCategories();
+						</script>
+					</ul>
+				</div>
+			</div>
+			<img src="resources/img/9.png" class="logo"><a href="#"></a>
+			<div class="nav-items">
+				<div class="search">
+					<input type="text" class="search-box"
+						placeholder="search brand, product">
+					<button class="search-button">
+						<img src="resources/img/search-icon.png">
+					</button>
+				</div>
+				<a href="#">Page1</a> <a href="#">Page2</a> <a href="#">Page3</a>
+			</div>
+			<div class="pop-up-menu">
+				<div class="profile" onclick="menuToggle();">
+					<img src="resources/img/cox.jpg">
+				</div>
+				<div class="menu">
+					<h3>Профиль</h3>
+					<ul>
+						<li class="nav-item"><img src="resources/img/9.png"> <a
+							href="#">Мои заказы</a></li>
+						<li class="nav-item"><img src="resources/img/9.png"> <a
+							href="#">Избранное</a></li>
+						<li class="nav-item"><img src="resources/img/9.png"><a
+							href="#">Адреса</a></li>
+						<li class="nav-item"><img src="resources/img/9.png"><a
+							href="#">MyProfile</a></li>
+						<li class="nav-item"><img src="resources/img/9.png"><a
+							href="#">MyProfile</a></li>
+						<li class="nav-item"><img src="resources/img/9.png"><a
+							href="#">MyProfile</a></li>
+					</ul>
+				</div>
+			</div>
+			<script src="resources/js/home_page.js"></script>
+		</div>
+	</nav>
+
+	<!-- cards container -->
+	<section class="product">
+		<div class="product-container">
+			<script src="resources/js/home_page.js"></script>
+			<script th:inline="javascript">
+				var products = /*[[${products}]]*/
+				createProductCards(products);
+			</script>
+		</div>
+	</section>
+</body>
+</html>

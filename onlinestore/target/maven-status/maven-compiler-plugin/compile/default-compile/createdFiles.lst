@@ -1,0 +1,14 @@
+config/SpringConfig.class
+controllers/RegistrationController.class
+models/User.class
+models/Product.class
+controllers/AutorizationController.class
+dao/ProductDAO.class
+classes/TelegramBotController.class
+classes/TelegramBotMembership.class
+dao/ProductCategoryDAO.class
+dao/UserDAO.class
+config/DispatcherServletInitializer.class
+classes/SpringTelegramBot.class
+controllers/HomeController.class
+models/ProductCategory.class
