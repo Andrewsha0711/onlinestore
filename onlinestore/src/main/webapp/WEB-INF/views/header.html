@@ -2,8 +2,10 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" th:href="@{/resources/css/main.css}">
-<link rel="stylesheet" th:href="@{/resources/css/header.css}">
+<link rel="stylesheet" th:href="@{/resources/css/main.css}"
+	href="/onlinestore/src/main/webapp/resources/css/main.css">
+<link rel="stylesheet" th:href="@{/resources/css/header.css}"
+	href="/onlinestore/src/main/webapp/resources/css/header.css">
 </head>
 
 <body>
@@ -11,12 +13,15 @@
 		<div class="nav" id="nav">
 			<div class="pop-up-categories-menu">
 				<div class="categories" onclick="categoriesMenuToggle();">
-					<img th:src="@{/resources/img/cox.jpg}">
+					<img th:src="@{/resources/img/menu.png}"
+						src="/onlinestore/src/main/webapp/resources/img/menu.png">
 				</div>
 				<div class="menu">
 					<h3>Categories</h3>
 					<ul>
-						<script th:src="@{/resources/js/home_page.js}"></script>
+						<script th:src="@{/resources/js/home_page.js}"
+							src="/onlinestore/src/main/webapp/resources/js/home_page.js">
+						</script>
 						<!-- <script> -->
 						<!-- createProductCategories(); -->
 						<!-- </script> -->
@@ -24,10 +29,16 @@
 					</ul>
 				</div>
 			</div>
-			<img th:src="@{/resources/img/9.png}" class="logo"><a href="#"></a>
+			<img th:src="@{/resources/img/9.png}"
+				src="/onlinestore/src/main/webapp/resources/img/9.png"
+				class="logo">
+			<a href="#"></a>
 			<div class="search">
 				<input type="text" class="search-box" placeholder="search brand, product">
-				<button class="search-button"><img th:src="@{/resources/img/search-icon.png}"></button>
+				<button class="search-button">
+					<img th:src="@{/resources/img/search-icon.png}"
+						src="/onlinestore/src/main/webapp/resources/img/search-icon.png">
+				</button>
 			</div>
 			<div class="nav-items">
 				<!-- <div class="pages"> -->

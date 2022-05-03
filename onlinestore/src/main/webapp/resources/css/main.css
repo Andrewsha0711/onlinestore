@@ -1,10 +1,9 @@
 :root {
   /*   color variables */
   --clr-primary: #6aeeb5;
-  --clr-primary-hover: #29e6a7;
-  --clr-primary-dark: #039d69;
-  --clr-gray100: #f0f7f8;
-  --clr-gray200: #cad8e0;
+  --clr-primary-dark: #70757D;
+  --clr-gray100: #E2EBFC;
+  --clr-gray200: #CCD4E3;
 
   /*   border radius */
   --radius: 1rem;
