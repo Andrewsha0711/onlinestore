@@ -19,12 +19,6 @@
 				<div class="menu">
 					<h3>Categories</h3>
 					<ul>
-						<script th:src="@{/resources/js/home_page.js}"
-							src="/onlinestore/src/main/webapp/resources/js/home_page.js">
-						</script>
-						<!-- <script> -->
-						<!-- createProductCategories(); -->
-						<!-- </script> -->
 						<li class="nav-item"><img src=""><a th:href="@{catalog}">Category</a></li>
 					</ul>
 				</div>
@@ -47,9 +41,10 @@
 					<a href="#">Page3</a>
 				<!-- </div> -->
 			</div>
-			<div class="pop-up-menu">
-				<div class="profile" onclick="menuToggle();">
-					<img th:src="@{/resources/img/cox.jpg}">
+			<div class="profile-pop-up-menu">
+				<div class="profile" onclick="profileMenuClick();">
+					<img th:src="@{/resources/img/cox.jpg}"
+						src="/onlinestore/src/main/webapp/resources/img/account_circle.png">
 				</div>
 				<div class="menu">
 					<h3>Профиль</h3>
@@ -63,8 +58,8 @@
 					</ul>
 				</div>
 			</div>
-			<script th:src="@{/resources/js/home_page.js}"
-				src="/onlinestore/src/main/webapp/resources/js/home_page.js">
+			<script th:src="@{/resources/js/header.js}"
+				src="/onlinestore/src/main/webapp/resources/js/header.js">
 			</script>
 		</div>
 	</nav>
