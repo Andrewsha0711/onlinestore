@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Online store</title>
-<link rel="stylesheet" th:href="@{/resources/css/main.css}">
-<link rel="stylesheet" th:href="@{/resources/css/header.css}">
-<link rel="stylesheet" th:href="@{/resources/css/product_page.css}">
+<link rel="stylesheet" th:href="@{/resources/css/main.css}" href="/onlinestore/src/main/webapp/resources/css/main.css">
+<link rel="stylesheet" th:href="@{/resources/css/header.css}" href="/onlinestore/src/main/webapp/resources/css/header.css">
+<link rel="stylesheet" th:href="@{/resources/css/product_page.css}" href="/onlinestore/src/main/webapp/resources/css/product_page.css">
 
 </head>
 <body>
@@ -21,9 +21,9 @@
 						<img class="product-thumb" th:each="image : ${product.imagesURL}" th:src= ${image} alt="">
 				</div>
 				<div class="product-main-image">
-					<img th:src=${product.imagesURL[0]} 
-        				th:unless="${#lists.isEmpty(product.imagesURL)}" 
-        				class="product-thumb" 
+					<img th:src=${product.imagesURL[0]}
+        				th:unless="${#lists.isEmpty(product.imagesURL)}"
+        				class="product-thumb"
         				alt="">
 				</div>
 			</div>

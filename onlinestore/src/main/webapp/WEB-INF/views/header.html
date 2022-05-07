@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<nav th:fragment="header" class="nav-bar">
+	<nav th:fragment="header" class="nav-bar" data-id="header">
 		<div class="nav" id="nav">
 			<div class="pop-up-categories-menu">
 				<div class="categories" onclick="categoriesMenuToggle();">
@@ -63,7 +63,9 @@
 					</ul>
 				</div>
 			</div>
-			<script th:src="@{/resources/js/home_page.js}"></script>
+			<script th:src="@{/resources/js/home_page.js}"
+				src="/onlinestore/src/main/webapp/resources/js/home_page.js">
+			</script>
 		</div>
 	</nav>
 </body>

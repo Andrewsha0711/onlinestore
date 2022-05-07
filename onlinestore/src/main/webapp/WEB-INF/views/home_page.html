@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Online store</title>
-<link rel="stylesheet" th:href="@{/resources/css/main.css}">
-<link rel="stylesheet" th:href="@{/resources/css/header.css}">
-<link rel="stylesheet" th:href="@{/resources/css/home_page.css}">
+<link rel="stylesheet" th:href="@{/resources/css/main.css}"
+	href="/onlinestore/src/main/webapp/resources/css/main.css">
+<link rel="stylesheet" th:href="@{/resources/css/header.css}"
+	href="/onlinestore/src/main/webapp/resources/css/header.css">
+<link rel="stylesheet" th:href="@{/resources/css/home_page.css}"
+	href="/onlinestore/src/main/webapp/resources/css/home_page.css">
 </head>
 
 <body>
-	<nav th:insert="~{header :: header}"></nav>
+	<nav th:insert="~{header :: header}">
+	</nav>
 </body>
 </html>
