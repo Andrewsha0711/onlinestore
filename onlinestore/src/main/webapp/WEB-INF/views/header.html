@@ -6,6 +6,8 @@
 	href="/onlinestore/src/main/webapp/resources/css/main.css">
 <link rel="stylesheet" th:href="@{/resources/css/header.css}"
 	href="/onlinestore/src/main/webapp/resources/css/header.css">
+<link rel="stylesheet" th:href="@{/resources/css/autorization_popup.css}"
+	href="/onlinestore/src/main/webapp/resources/css/autorization_popup.css">
 </head>
 
 <body>
@@ -42,7 +44,7 @@
 				<!-- </div> -->
 			</div>
 			<div class="profile-pop-up-menu">
-				<div class="profile" onclick="profileMenuClick();">
+				<div class="profile" onclick="profileIconClick();">
 					<img th:src="@{/resources/img/account_circle.png}"
 						src="/onlinestore/src/main/webapp/resources/img/account_circle.png">
 				</div>
@@ -58,10 +60,60 @@
 					</ul>
 				</div>
 			</div>
-			<script th:src="@{/resources/js/header.js}"
-				src="/onlinestore/src/main/webapp/resources/js/header.js">
-			</script>
 		</div>
 	</nav>
+	<div class="autorization-pop-up">
+		<div class="content-body">
+			<div class="content">
+				<button type="button" class="close-button" name="close-button"></button>
+				<div class="switch-buttons">
+					<button type="button" class="option" name="registration_option" onclick="switchToRegistrationForm();">Sign up</button>
+					<button type="button" class="option" name="autorization_option" onclick="switchToLoginForm();">Sign in</button>
+				</div>
+				<div class="registration-form">
+					<form th:method="POST" th:action="@{/registration}" th:object="${user}">
+						<div class="txt_field">
+							<label for="email">Email</label>
+							<input name="email" type="text" th:field="*{email}"
+								id="email" class="input js-input-email"/>
+						</div>
+						<div class="txt_field">
+							<label for="username">Username</label>
+							<input name="username" type="text" th:field="*{username}"
+								id="username" class="input js-input"/>
+						</div>
+						<div class="txt_field">
+							<label for="password">Password</label>
+							<input name="password" type="password" th:field="*{password}"
+								id="password" class="input js-input-password"/>
+						</div>
+						<div class="txt_field">
+							<label>Подтвердите пароль</label>
+							<input name="secondPassword" type="password" class="input js-input-password-again"/>
+						</div>
+						<input type="submit" value="Зарегистрироваться"/>
+					</form>
+				</div>
+				<div class="login-form">
+					<form th:method="POST" th:action="@{/autorization}" th:object="${user}">
+						<div class="txt_field">
+							<label for="email">Email</label>
+							<input name="email" type="text" th:field="*{email}"
+								id="email" class="input js-input-email"/>
+						</div>
+						<div class="txt_field">
+							<label for="password">Password</label>
+							<input name="password" type="password" th:field="*{password}"
+								id="password" class="input js-input-password"/>
+						</div>
+						<input type="submit" value="Войти"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/resources/js/header.js}"
+		src="/onlinestore/src/main/webapp/resources/js/header.js">
+	</script>
 </body>
 </html>
