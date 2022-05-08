@@ -15,11 +15,11 @@
 function profileIconClick(){
   if(1==0){
     const toggleMenu = document.querySelector('.profile-pop-up-menu .menu');
-    toggleMenu.classList.toggle('active')
+    toggleMenu.classList.toggle('active');
   }
   else{
-    const toggleMenu = document.querySelector('.autorization-pop-up');
-    toggleMenu.classList.toggle('active')
+    const autorizationForm = document.querySelector('.autorization-pop-up');
+    autorizationForm.classList.add('active');
   }
 }
 
@@ -40,4 +40,9 @@ function switchToLoginForm(){
   const loginForm = document.querySelector('.login-form');
   regForm.classList.remove('active');
   loginForm.classList.remove('hidden');
+}
+
+function closeForm(){
+  const autorizationForm = document.querySelector('.autorization-pop-up');
+  autorizationForm.classList.remove('active');
 }
