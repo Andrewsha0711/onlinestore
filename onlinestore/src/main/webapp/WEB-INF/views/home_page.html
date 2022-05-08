@@ -12,7 +12,11 @@
 </head>
 
 <body>
-	<nav th:insert="~{header :: header}">
+	<nav th:insert="~{header :: header}" id="nav">
+		<script type="text/javascript" src="/onlinestore/src/main/webapp/resources/js/header.js"></script>
+		<script type="text/javascript">
+			createHeader();
+		</script>
 	</nav>
 </body>
 </html>
