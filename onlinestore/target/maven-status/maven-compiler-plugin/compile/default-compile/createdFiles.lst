@@ -6,7 +6,7 @@ controllers/AutorizationController.class
 dao/ProductDAO.class
 classes/TelegramBotController.class
 classes/TelegramBotMembership.class
-dao/ProductCategoryDAO.class
+controllers/CatalogController.class
 dao/UserDAO.class
 config/DispatcherServletInitializer.class
 classes/SpringTelegramBot.class

@@ -6,12 +6,13 @@
 	href="/onlinestore/src/main/webapp/resources/css/main.css">
 <link rel="stylesheet" th:href="@{/resources/css/header.css}"
 	href="/onlinestore/src/main/webapp/resources/css/header.css">
-<link rel="stylesheet" th:href="@{/resources/css/autorization_popup.css}"
+<link rel="stylesheet"
+	th:href="@{/resources/css/autorization_popup.css}"
 	href="/onlinestore/src/main/webapp/resources/css/autorization_popup.css">
 </head>
 
 <body>
-	<nav th:fragment="header" class="nav-bar" data-id="header">
+	<nav class="nav-bar" th:fragment="header" data-id="header">
 		<div class="nav" id="nav">
 			<div class="pop-up-categories-menu">
 				<div class="categories" onclick="categoriesMenuToggle();">
@@ -21,16 +22,17 @@
 				<div class="menu">
 					<h3>Categories</h3>
 					<ul>
-						<li class="nav-item"><img src=""><a th:href="@{catalog}">Category</a></li>
+						<li class="nav-item"><img src=""><a
+							th:href="@{/catalog}">Category</a></li>
 					</ul>
 				</div>
 			</div>
 			<img th:src="@{/resources/img/9.png}"
-				src="/onlinestore/src/main/webapp/resources/img/9.png"
-				class="logo">
+				src="/onlinestore/src/main/webapp/resources/img/9.png" class="logo">
 			<a href="#"></a>
 			<div class="search">
-				<input type="text" class="search-box" placeholder="search brand, product">
+				<input type="text" class="search-box"
+					placeholder="search brand, product">
 				<button class="search-button">
 					<img th:src="@{/resources/img/search-icon.png}"
 						src="/onlinestore/src/main/webapp/resources/img/search-icon.png">
@@ -38,82 +40,97 @@
 			</div>
 			<div class="nav-items">
 				<!-- <div class="pages"> -->
-					<a href="#">Page1</a>
-					<a href="#">Page2</a>
-					<a href="#">Page3</a>
+				<a href="#">Page1</a> <a href="#">Page2</a> <a href="#">Page3</a>
 				<!-- </div> -->
 			</div>
 			<div class="profile-pop-up-menu">
-				<div class="profile" onclick="profileIconClick();">
+				<div th:if="${user}" class="profile"
+					th:attr="onclick=|profileIconClick('${user.email}')|"
+					onclick="profileIconClick();">
+					<img th:src="@{/resources/img/account_circle.png}"
+						th:unless="${user.imageURL}"
+						src="/onlinestore/src/main/webapp/resources/img/account_circle.png">
+					<img th:src=${user.imageURL} th:if="${user.imageURL}">
+				</div>
+				<div th:unless="${user}" class="profile"
+					th:attr="onclick=|profileIconClick('null')|"
+					onclick="profileIconClick();">
 					<img th:src="@{/resources/img/account_circle.png}"
 						src="/onlinestore/src/main/webapp/resources/img/account_circle.png">
 				</div>
 				<div class="menu">
 					<h3>Профиль</h3>
 					<ul>
-						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a href="#">Мои заказы</a></li>
-						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a href="#">Избранное</a></li>
-						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a href="#">Адреса</a></li>
-						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a href="#">MyProfile</a></li>
-						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a href="#">MyProfile</a></li>
-						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a href="#">MyProfile</a></li>
+						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a
+							href="#">Мои заказы</a></li>
+						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a
+							href="#">Избранное</a></li>
+						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a
+							href="#">Адреса</a></li>
+						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a
+							href="#">MyProfile</a></li>
+						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a
+							href="#">MyProfile</a></li>
+						<li class="nav-item"><img th:src="@{/resources/img/9.png}"><a
+							href="#">MyProfile</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-	</nav>
-	<div class="autorization-pop-up">
-		<div class="content-body">
-			<div class="content">
-				<button type="button" class="close-button" name="close-button" onclick="closeForm();"></button>
-				<div class="switch-buttons">
-					<button type="button" class="option" name="registration_option" onclick="switchToRegistrationForm();">Sign up</button>
-					<button type="button" class="option" name="autorization_option" onclick="switchToLoginForm();">Sign in</button>
-				</div>
-				<div class="registration-form">
-					<form th:method="POST" th:action="@{/registration}" th:object="${user}">
-						<div class="txt_field">
-							<label for="email">Email</label>
-							<input name="email" type="text" th:field="*{email}"
-								id="email" class="input js-input-email"/>
-						</div>
-						<div class="txt_field">
-							<label for="username">Username</label>
-							<input name="username" type="text" th:field="*{username}"
-								id="username" class="input js-input"/>
-						</div>
-						<div class="txt_field">
-							<label for="password">Password</label>
-							<input name="password" type="password" th:field="*{password}"
-								id="password" class="input js-input-password"/>
-						</div>
-						<div class="txt_field">
-							<label>Подтвердите пароль</label>
-							<input name="secondPassword" type="password" class="input js-input-password-again"/>
-						</div>
-						<input type="submit" value="Зарегистрироваться"/>
-					</form>
-				</div>
-				<div class="login-form">
-					<form th:method="POST" th:action="@{/autorization}" th:object="${user}">
-						<div class="txt_field">
-							<label for="email">Email</label>
-							<input name="email" type="text" th:field="*{email}"
-								id="email" class="input js-input-email"/>
-						</div>
-						<div class="txt_field">
-							<label for="password">Password</label>
-							<input name="password" type="password" th:field="*{password}"
-								id="password" class="input js-input-password"/>
-						</div>
-						<input type="submit" value="Войти"/>
-					</form>
+		<script th:src="@{/resources/js/header.js}"
+			src="/onlinestore/src/main/webapp/resources/js/header.js">
+		</script>
+		<div class="autorization-pop-up">
+			<div class="content-body">
+				<div class="content">
+					<button type="button" class="close-button" name="close-button"
+						onclick="closeForm();"></button>
+					<div class="switch-buttons">
+						<button type="button" class="option" name="registration_option"
+							onclick="switchToRegistrationForm();">Sign up</button>
+						<button type="button" class="option" name="autorization_option"
+							onclick="switchToLoginForm();">Sign in</button>
+					</div>
+					<div class="registration-form">
+						<form th:method="POST" th:action="@{/registration}">
+							<div class="txt_field">
+								<label for="email">Email</label> 
+								<input name="email" type="text" id="email" class="input"/>
+							</div>
+							<div class="txt_field">
+								<label for="username" th:text="#{label.username}">Username</label> 
+								<input name="username" type="text" id="username" class="input"/>
+							</div>
+							<div class="txt_field">
+								<label for="password" th:text="#{label.password}">Password</label>
+								<input name="password" type="password" id="password" class="input js-input-password"/>
+							</div>
+							<div class="txt_field">
+								<label>Подтвердите пароль</label>
+								<input name="secondPassword" type="password" class="input"/>
+							</div>
+							<input type="submit" value="Зарегистрироваться" />
+						</form>
+					</div>
+					<div class="login-form">
+						<form th:method="POST" th:action="@{/autorization}">
+							<div class="txt_field">
+								<label for="email">Email</label> 
+								<input name="email" type="text" id="email" class="input"/>
+							</div>
+							<div class="txt_field">
+								<label for="password" th:text="#{label.password}">Password</label> 
+								<input name="password" type="password" id="password" class="input"/>
+							</div>
+							<input type="submit" value="Войти" />
+						</form>
+					</div>
 				</div>
 			</div>
+			<script th:src="@{/resources/js/header.js}"
+				src="/onlinestore/src/main/webapp/resources/js/header.js">
+			</script>
 		</div>
-	</div>
-	<script th:src="@{/resources/js/header.js}"
-		src="/onlinestore/src/main/webapp/resources/js/header.js">
-	</script>
+	</nav>
 </body>
 </html>

@@ -12,14 +12,15 @@
    })
  }
 
-function profileIconClick(){
-  if(1==0){
-    const toggleMenu = document.querySelector('.profile-pop-up-menu .menu');
-    toggleMenu.classList.toggle('active');
-  }
-  else{
+function profileIconClick(user_email){
+  if(user_email == null || user_email == 'null'){
     const autorizationForm = document.querySelector('.autorization-pop-up');
     autorizationForm.classList.add('active');
+  }
+  else{
+	console.log(user_email);
+    const toggleMenu = document.querySelector('.profile-pop-up-menu .menu');
+    toggleMenu.classList.toggle('active');
   }
 }
 

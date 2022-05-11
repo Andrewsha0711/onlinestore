@@ -8,6 +8,7 @@ public class User {
 	private String username;
 	private String password;
 	private String phoneNumber;
+	private String imageURL;
 	private TelegramBotMembership telegram;
 	
 	public User() {
@@ -53,6 +54,14 @@ public class User {
 	}
 	public void setPhoneNumber(String value) {
 		this.phoneNumber = value;
+	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
 	}
 	
 
