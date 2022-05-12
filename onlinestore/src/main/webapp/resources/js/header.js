@@ -18,7 +18,6 @@ function profileIconClick(user_email){
     autorizationForm.classList.add('active');
   }
   else{
-	console.log(user_email);
     const toggleMenu = document.querySelector('.profile-pop-up-menu .menu');
     toggleMenu.classList.toggle('active');
   }
