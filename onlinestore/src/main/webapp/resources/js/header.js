@@ -1,7 +1,4 @@
-/*
-Выплывающие меню
- */
- function createHeader(){
+function createHeader(){
    const nav = document.getElementById('nav');
    fetch('./header.html')
    .then(res=>{
@@ -12,15 +9,13 @@
    })
  }
 
-function profileIconClick(user_email){
-  if(user_email == null || user_email == 'null'){
-    const autorizationForm = document.querySelector('.autorization-pop-up');
+function profileIconClick_notAuthorized(){
+	const autorizationForm = document.querySelector('.autorization-pop-up');
     autorizationForm.classList.add('active');
-  }
-  else{
-    const toggleMenu = document.querySelector('.profile-pop-up-menu .menu');
+}
+function profileIconClick_Authorized(){
+	const toggleMenu = document.querySelector('.profile-pop-up-menu .menu');
     toggleMenu.classList.toggle('active');
-  }
 }
 
 function categoriesMenuToggle(){

@@ -7,14 +7,16 @@
 <link rel="stylesheet" th:href="@{resources/css/categories.css}">
 <link rel="stylesheet" th:href="@{/resources/css/main.css}"
 	href="/onlinestore/src/main/webapp/resources/css/main.css">
-<link rel="stylesheet" th:href="@{/resources/css/header.css}"
-	href="/onlinestore/src/main/webapp/resources/css/header.css">
-<link rel="stylesheet" th:href="@{/resources/css/autorization_popup.css}"
-	href="/onlinestore/src/main/webapp/resources/css/autorization_popup.css">
+<link rel="stylesheet" th:href="@{/resources/css/header/header.css}"
+	href="/onlinestore/src/main/webapp/resources/css/header/header.css">
+<link rel="stylesheet" th:href="@{/resources/css/header/autorization_popup.css}"
+	href="/onlinestore/src/main/webapp/resources/css/header/autorization_popup.css">
+<link rel="stylesheet" th:href="@{/resources/css/header/profile_popup.css}"
+	href="/onlinestore/src/main/webapp/resources/css/header/profile_popup.css">
 </head>
 
 <body>
-	<nav th:insert="~{header :: header}"></nav>
+	<nav th:insert="~{header/header :: header}"></nav>
 	<!-- cards container -->
 	<section class="product">
 		<div class="product-container">
